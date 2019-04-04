@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: auto;
+    background: url('imgs/joanna-kosinska-129039-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background: #2f3030;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.logo {
+    margin-left: 15px;
+    color: #bcbcbc;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 1em;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.nav-links li {
+    list-style: none;
+    padding-right: 3em;
+    border-right: 1px solid black;
+}
+
+.nav-links li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    display: block;
+    background: gold;
+    transition: width .3s;
+}
+
+.nav-links li:hover::after {
+    transition: width .3s;
+    width: 100%;
+}
+
+.nav-links li:last-of-type {
+    border: none;
+}
+
+.nav-links a {
+    color: #bcbcbc;
+    text-decoration: none;
+    letter-spacing: 5px;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #efefef;
+    margin: 5px;
+    transition: all 0.3s ease;
+
+}
+
+@media screen and (max-width:1024px) {
+    .nav-links {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    body {
+        overflow: hidden;
+        height: 100vh;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: -40%;
+        height: 92vh;
+        top: 8vh;
+        background-color: #2f3030;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+        /*        transform: translateX(100%);*/
+        transition: transform .5s ease-in;
+    }
+
+    .nav-links li {
+        opacity: 0;
+        border: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+}
+
+.nav-active {
+    transform: translateX(-100%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+main {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    display: block;
+    position: relative;
+    min-height: 85vh;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #706f6f;
+    color: aliceblue;
+    z-index: -1;
+    border-radius: 30px;
+    opacity: 0.93;
+    text-align: left;
+}
+
+.profile {
+    width: 70%;
+    height: auto;
+    float: left;
+    margin: 5px;
+    border-radius: 100px;
+    box-shadow: 2px;
+    box-shadow: -2px 2px #3f3f3f;
+
+}
+
+p {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.icons {
+    display: block;
+    text-align: center;
+    margin-top: 5rem;
+
+}
+
+.icons img {}
+
+.icons p {}
